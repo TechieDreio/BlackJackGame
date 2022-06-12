@@ -2,10 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Collections;
 using System.Windows.Forms;
 
 namespace BlackJackGame
 {
+
+    // ===================================================================================================================
+
+    // Main Program
+
+    // ===================================================================================================================
+
     static class Program
     {
         /// <summary>
@@ -16,7 +24,7 @@ namespace BlackJackGame
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new OptionForm());
         }
     }
 }

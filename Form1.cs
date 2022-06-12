@@ -10,11 +10,31 @@ using System.Windows.Forms;
 
 namespace BlackJackGame
 {
-    public partial class Form1 : Form
+    public partial class OptionForm : Form
     {
-        public Form1()
+        public OptionForm()
         {
             InitializeComponent();
+        }
+
+        private void NewBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PlayBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HallBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExitBTN_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
