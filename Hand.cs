@@ -7,7 +7,7 @@ using System.Collections;
 
 namespace BlackJackGame
 {
-    class Hand
+    public class Hand
     {
         private ArrayList hand;
 

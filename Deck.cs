@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlackJackGame
 {
-    class Deck
+    public class Deck
     {
         private Card[] deck;
         private int cardsUsed;

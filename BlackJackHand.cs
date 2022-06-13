@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlackJackGame
 {
-    class BlackJackHand : Hand
+    public class BlackJackHand : Hand
     {
         public int getBlackjackValue()
         {
