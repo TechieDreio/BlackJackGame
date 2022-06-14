@@ -41,6 +41,7 @@ namespace BlackJackGame
             // 
             this.usernameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameTxt.Location = new System.Drawing.Point(151, 27);
+            this.usernameTxt.MaxLength = 10;
             this.usernameTxt.Name = "usernameTxt";
             this.usernameTxt.Size = new System.Drawing.Size(274, 29);
             this.usernameTxt.TabIndex = 0;

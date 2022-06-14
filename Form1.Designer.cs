@@ -51,16 +51,16 @@ namespace BlackJackGame
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(85, 145);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 25);
+            this.label1.Size = new System.Drawing.Size(118, 25);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Player";
+            this.label1.Text = "Username";
             // 
             // PlayBTN
             // 
             this.PlayBTN.Font = new System.Drawing.Font("Impact", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlayBTN.Location = new System.Drawing.Point(90, 234);
+            this.PlayBTN.Location = new System.Drawing.Point(90, 228);
             this.PlayBTN.Name = "PlayBTN";
-            this.PlayBTN.Size = new System.Drawing.Size(388, 57);
+            this.PlayBTN.Size = new System.Drawing.Size(388, 63);
             this.PlayBTN.TabIndex = 3;
             this.PlayBTN.Text = "PLAY";
             this.PlayBTN.UseVisualStyleBackColor = true;
@@ -91,7 +91,7 @@ namespace BlackJackGame
             // NewBTN
             // 
             this.NewBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewBTN.Location = new System.Drawing.Point(415, 162);
+            this.NewBTN.Location = new System.Drawing.Point(415, 141);
             this.NewBTN.Name = "NewBTN";
             this.NewBTN.Size = new System.Drawing.Size(63, 32);
             this.NewBTN.TabIndex = 6;
@@ -120,7 +120,7 @@ namespace BlackJackGame
             // passwordTxt
             // 
             this.passwordTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTxt.Location = new System.Drawing.Point(210, 189);
+            this.passwordTxt.Location = new System.Drawing.Point(210, 180);
             this.passwordTxt.Name = "passwordTxt";
             this.passwordTxt.PasswordChar = '*';
             this.passwordTxt.Size = new System.Drawing.Size(199, 29);
@@ -132,7 +132,7 @@ namespace BlackJackGame
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(85, 191);
+            this.label3.Location = new System.Drawing.Point(85, 182);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(114, 25);
             this.label3.TabIndex = 10;
@@ -154,7 +154,6 @@ namespace BlackJackGame
             this.usernameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameTxt.Location = new System.Drawing.Point(210, 143);
             this.usernameTxt.Name = "usernameTxt";
-            this.usernameTxt.PasswordChar = '*';
             this.usernameTxt.Size = new System.Drawing.Size(199, 29);
             this.usernameTxt.TabIndex = 12;
             // 
@@ -162,7 +161,7 @@ namespace BlackJackGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::BlackJackGame.Properties.Resources.bg1;
+            this.BackgroundImage = global::BlackJackGame.Properties.Resources.bg2;
             this.ClientSize = new System.Drawing.Size(564, 448);
             this.Controls.Add(this.usernameTxt);
             this.Controls.Add(this.SettingsBTN);
