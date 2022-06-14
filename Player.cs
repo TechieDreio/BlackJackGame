@@ -38,6 +38,11 @@ namespace BlackJackGame
             this.coins += coins;
         }
 
+        public void deductCoins(int coins)
+        {
+            this.coins -= coins;
+        }
+
         public void setCoins(int coins)
         {
             this.coins = coins;

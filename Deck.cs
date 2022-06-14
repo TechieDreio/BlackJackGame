@@ -40,9 +40,9 @@ namespace BlackJackGame
 
         public void shuffle()
         {
-            for(int i=0; i<deck.Count-1; i++)
+            for (int i=0; i<deck.Count-1; i++)
             {
-                Random rng = new Random(DateTime.Now.Second);
+                Random rng = new Random(DateTime.Now.Millisecond / DateTime.Now.Second);
                 int pos = rng.Next(0, 51);
                 Card temp = (Card)deck[i];
                 deck[i] = deck[pos];

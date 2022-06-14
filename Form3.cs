@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Drawing;
 
 namespace BlackJackGame
 {
@@ -41,6 +40,10 @@ namespace BlackJackGame
             coinsLabel.Text = player.getCoins().ToString();
             playerLabel.Text = player.getUName();
             resultLabel.Text = "Place your bet...";
+
+            deck = new Deck();
+            deck.shuffle();
+            bet = 0;
         }
 
         private void hitBtn_Click(object sender, EventArgs e)
@@ -49,10 +52,28 @@ namespace BlackJackGame
             {
                 if (playerHand.getHandCardCount() >= 2)
                 {
-                    if(playerHand.getHandCardCount() <= 5)
+                    if(playerHand.getHandCardCount() < 5)
                     {
-                        playerHand.addCard(deck.dealCard());
-                        // Display new card
+                        Card addCard = deck.dealCard();
+                        playerHand.addCard(addCard);
+
+                        if(playerHand.getHandCardCount() == 3)
+                        {
+                            setCardImg(pCard3, addCard);
+                        }
+                        else if (playerHand.getHandCardCount() == 4)
+                        {
+                            setCardImg(pCard4, addCard);
+                        }
+                        else
+                        {
+                            setCardImg(pCard5, addCard);
+                        }
+
+                        if (playerHand.getHandTotal() >= 21)
+                        {
+                            evaluate();
+                        }
                     }
                     else
                     {
@@ -66,101 +87,499 @@ namespace BlackJackGame
 
         private void evaluateBtn_Click(object sender, EventArgs e)
         {
+            evaluate();
+        }
+
+        private void evaluate()
+        {
+            if (gameInProgress)
+            {
+                int dvalue = dealerHand.getHandTotal();
+                while ((dvalue < 15) && (dealerHand.getHandCardCount() < 5))
+                {
+                    Card dealed = deck.dealCard();
+                    dealerHand.addCard(dealed);
+
+                    if (dealerHand.getHandCardCount() == 3)
+                    {
+                        setCardImg(dCard3, dealed);
+                    }
+                    else if (dealerHand.getHandCardCount() == 4)
+                    {
+                        setCardImg(dCard4, dealed);
+                    }
+                    else
+                    {
+                        setCardImg(dCard5, dealed);
+                    }
+
+                    dvalue = dealerHand.getHandTotal();
+                }
+
+                setCardImg(dCard1, dealerHand.getCard(0));
+
+                int pvalue = playerHand.getHandTotal();
+
+                if(dvalue != pvalue)
+                {
+                    if (dvalue < 22)
+                    {
+                        if (pvalue > dvalue)
+                        {
+                            if (pvalue < 22)
+                            {
+                                gameInProgress = false;
+                                resultLabel.Text = "Congratulation! You WIN!    P: " + pvalue + " - D:" + dvalue;
+                                player.addCoins(bet);
+                            }
+                            else
+                            {
+                                gameInProgress = false;
+                                resultLabel.Text = "Busted! You Lose.   P: " + pvalue + " - D:" + dvalue;
+                                player.deductCoins(bet);
+                            }
+                            //=====================================================================================
+                            // update coin in file
+                            //=====================================================================================
+                        }
+                        else
+                        {
+                            gameInProgress = false;
+                            resultLabel.Text = "Too bad! You Lose.   P: " + pvalue + " - D:" + dvalue;
+                            player.deductCoins(bet);
+                            //=====================================================================================
+                            // update coin in file
+                            //=====================================================================================
+                        }
+                    }
+                    else
+                    {
+                        gameInProgress = false;
+                        resultLabel.Text = "Congratulation! You WIN!    P: " + pvalue + " - D:" + dvalue;
+                        player.addCoins(bet);
+                        //=====================================================================================
+                        // update coin in file
+                        //=====================================================================================
+                    }
+                }
+                else
+                {
+                    gameInProgress = false;
+                    resultLabel.Text = "It's a Draw!    P: " + pvalue + " - D:" + dvalue;
+                }
+            }
+            bet = 0;
             gameInProgress = false;
         }
 
         private void newGame()
         {
-            deck = new Deck();
-            deck.shuffle();
-            bet = 0;
-
+            if(deck.cardsLeft() <= 10)
+            {
+                deck = new Deck();
+                deck.shuffle();
+                bet = 0;
+            }
             playerHand = new Hand();
             dealerHand = new Hand();
 
-            playerHand.addCard(deck.dealCard());
-            dealerHand.addCard(deck.dealCard());
-            playerHand.addCard(deck.dealCard());
-            dealerHand.addCard(deck.dealCard());
+            Card dealed = deck.dealCard();
+            playerHand.addCard(dealed);
+            setCardImg(pCard1, dealed);
+
+            dealed = deck.dealCard();
+            dealerHand.addCard(dealed);
+            dCard1.BackgroundImage = Properties.Resources.B;
+
+            dealed = deck.dealCard();
+            playerHand.addCard(dealed);
+            setCardImg(pCard2, dealed);
+
+            dealed = deck.dealCard();
+            dealerHand.addCard(dealed);
+            setCardImg(dCard2, dealed);
 
             gameInProgress = true;
+            if (playerHand.getHandTotal() >= 21)
+            {
+                evaluate();
+            }
         }
 
         private void dealBtn_Click(object sender, EventArgs e)
         {
-            if (!(bet == 0))
+            if (!gameInProgress)
             {
-                newGame();
+                if (!(bet == 0))
+                {
+                    newGame();
+                }
+                else
+                {
+                    resultLabel.Text = "Place your bet...";
+                    MessageBox.Show("Please make a bet first.", "Deal",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                }
             }
             else
             {
-                MessageBox.Show("Please make a bet first.", "Deal",
+                MessageBox.Show("Game in progress!", "Deal",
                         MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
+                        MessageBoxIcon.Information);
+            }
+
+        }
+        private void newGameBtn_Click(object sender, EventArgs e)
+        {
+            if (!gameInProgress)
+            {
+                coinsLabel.Text = player.getCoins().ToString();
+                playerLabel.Text = player.getUName();
+                pCard1.BackgroundImage = null;
+                pCard2.BackgroundImage = null;
+                pCard3.BackgroundImage = null;
+                pCard4.BackgroundImage = null;
+                pCard5.BackgroundImage = null;
+                dCard1.BackgroundImage = null;
+                dCard2.BackgroundImage = null;
+                dCard3.BackgroundImage = null;
+                dCard4.BackgroundImage = null;
+                dCard5.BackgroundImage = null;
+                betLabel.Text = "00000";
+                resultLabel.Text = "Place your bet...";
             }
         }
 
         // Bet 10
         private void button1_Click(object sender, EventArgs e)
         {
-            if (bet+10 <= 1000 && bet+10 <= player.getCoins())
+            if (!gameInProgress)
             {
-                bet += 10;
-                betLabel.Text = bet.ToString();
+                if (bet + 10 <= 1000 && bet + 10 <= player.getCoins())
+                {
+                    bet += 10;
+                    betLabel.Text = bet.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Unable to add bet.\n\nBet limit is up to 1000 coins only.", "Bet",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                }
             }
             else
             {
-                MessageBox.Show("Unable to add bet.\n\nBet limit is up to 1000 coins only.", "Bet",
+                MessageBox.Show("Game in progress!\n\nFinish the game to make another bet.", "Bet",
                         MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
+                        MessageBoxIcon.Information);
             }
         }
 
         // Bet 50
         private void button2_Click(object sender, EventArgs e)
         {
-            if(bet+50 <= 1000 && bet + 50 <= player.getCoins())
+            if (!gameInProgress)
             {
-                bet += 50;
-                betLabel.Text = bet.ToString();
+                if (bet + 50 <= 1000 && bet + 50 <= player.getCoins())
+                {
+                    bet += 50;
+                    betLabel.Text = bet.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Unable to add bet.\n\nBet limit is up to 1000 coins only.", "Bet",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                }
             }
             else
             {
-                MessageBox.Show("Unable to add bet.\n\nBet limit is up to 1000 coins only.", "Bet",
+                MessageBox.Show("Game in progress!\n\nFinish the game to make another bet.", "Bet",
                         MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
+                        MessageBoxIcon.Information);
             }
         }
 
         // Bet 100
         private void button3_Click(object sender, EventArgs e)
         {
-            if (bet+100 <= 1000 && bet + 100 <= player.getCoins())
+            if (!gameInProgress)
             {
-                bet += 100;
-                betLabel.Text = bet.ToString();
+                if (bet + 100 <= 1000 && bet + 100 <= player.getCoins())
+                {
+                    bet += 100;
+                    betLabel.Text = bet.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Unable to add bet.\n\nBet limit is up to 1000 coins only.", "Bet",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                }
             }
             else
             {
-                MessageBox.Show("Unable to add bet.\n\nBet limit is up to 1000 coins only.", "Bet",
+                MessageBox.Show("Game in progress!\n\nFinish the game to make another bet.", "Bet",
                         MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
+                        MessageBoxIcon.Information);
             }
         }
 
         // Bet 500
         private void button4_Click(object sender, EventArgs e)
         {
-            if (bet+500 <= 1000 && bet + 500 <= player.getCoins())
+            if (!gameInProgress)
             {
-                bet += 500;
-                betLabel.Text = bet.ToString();
+                if (bet + 500 <= 1000 && bet + 500 <= player.getCoins())
+                {
+                    bet += 500;
+                    betLabel.Text = bet.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Unable to add bet.\n\nBet limit is up to 1000 coins only.", "Bet",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                }
             }
             else
             {
-                MessageBox.Show("Unable to add bet.\n\nBet limit is up to 1000 coins only.", "Bet",
+                MessageBox.Show("Game in progress!\n\nFinish the game to make another bet.", "Bet",
                         MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
+                        MessageBoxIcon.Information);
+            }
+        }
+
+        private void setCardImg(Panel cardPanel, Card card)
+        {
+            switch (card.getValue())
+            {
+                case 1:
+                    switch (card.getSuit())
+                    {
+                        case "S":
+                            cardPanel.BackgroundImage = Properties.Resources.S1;
+                            break;
+                        case "H":
+                            cardPanel.BackgroundImage = Properties.Resources.H1;
+                            break;
+                        case "C":
+                            cardPanel.BackgroundImage = Properties.Resources.C1;
+                            break;
+                        default:
+                            cardPanel.BackgroundImage = Properties.Resources.D1;
+                            break;
+                    }
+                    break;
+                case 2:
+                    switch (card.getSuit())
+                    {
+                        case "S":
+                            cardPanel.BackgroundImage = Properties.Resources.S2;
+                            break;
+                        case "H":
+                            cardPanel.BackgroundImage = Properties.Resources.H2;
+                            break;
+                        case "C":
+                            cardPanel.BackgroundImage = Properties.Resources.C2;
+                            break;
+                        default:
+                            cardPanel.BackgroundImage = Properties.Resources.D2;
+                            break;
+                    }
+                    break;
+                case 3:
+                    switch (card.getSuit())
+                    {
+                        case "S":
+                            cardPanel.BackgroundImage = Properties.Resources.S3;
+                            break;
+                        case "H":
+                            cardPanel.BackgroundImage = Properties.Resources.H3;
+                            break;
+                        case "C":
+                            cardPanel.BackgroundImage = Properties.Resources.C3;
+                            break;
+                        default:
+                            cardPanel.BackgroundImage = Properties.Resources.D3;
+                            break;
+                    }
+                    break;
+                case 4:
+                    switch (card.getSuit())
+                    {
+                        case "S":
+                            cardPanel.BackgroundImage = Properties.Resources.S4;
+                            break;
+                        case "H":
+                            cardPanel.BackgroundImage = Properties.Resources.H4;
+                            break;
+                        case "C":
+                            cardPanel.BackgroundImage = Properties.Resources.C4;
+                            break;
+                        default:
+                            cardPanel.BackgroundImage = Properties.Resources.D4;
+                            break;
+                    }
+                    break;
+                case 5:
+                    switch (card.getSuit())
+                    {
+                        case "S":
+                            cardPanel.BackgroundImage = Properties.Resources.S5;
+                            break;
+                        case "H":
+                            cardPanel.BackgroundImage = Properties.Resources.H5;
+                            break;
+                        case "C":
+                            cardPanel.BackgroundImage = Properties.Resources.C5;
+                            break;
+                        default:
+                            cardPanel.BackgroundImage = Properties.Resources.D5;
+                            break;
+                    }
+                    break;
+                case 6:
+                    switch (card.getSuit())
+                    {
+                        case "S":
+                            cardPanel.BackgroundImage = Properties.Resources.S6;
+                            break;
+                        case "H":
+                            cardPanel.BackgroundImage = Properties.Resources.H6;
+                            break;
+                        case "C":
+                            cardPanel.BackgroundImage = Properties.Resources.C6;
+                            break;
+                        default:
+                            cardPanel.BackgroundImage = Properties.Resources.D6;
+                            break;
+                    }
+                    break;
+                case 7:
+                    switch (card.getSuit())
+                    {
+                        case "S":
+                            cardPanel.BackgroundImage = Properties.Resources.S7;
+                            break;
+                        case "H":
+                            cardPanel.BackgroundImage = Properties.Resources.H7;
+                            break;
+                        case "C":
+                            cardPanel.BackgroundImage = Properties.Resources.C7;
+                            break;
+                        default:
+                            cardPanel.BackgroundImage = Properties.Resources.D7;
+                            break;
+                    }
+                    break;
+                case 8:
+                    switch (card.getSuit())
+                    {
+                        case "S":
+                            cardPanel.BackgroundImage = Properties.Resources.S8;
+                            break;
+                        case "H":
+                            cardPanel.BackgroundImage = Properties.Resources.H8;
+                            break;
+                        case "C":
+                            cardPanel.BackgroundImage = Properties.Resources.C8;
+                            break;
+                        default:
+                            cardPanel.BackgroundImage = Properties.Resources.D8;
+                            break;
+                    }
+                    break;
+                case 9:
+                    switch (card.getSuit())
+                    {
+                        case "S":
+                            cardPanel.BackgroundImage = Properties.Resources.S9;
+                            break;
+                        case "H":
+                            cardPanel.BackgroundImage = Properties.Resources.H9;
+                            break;
+                        case "C":
+                            cardPanel.BackgroundImage = Properties.Resources.C9;
+                            break;
+                        default:
+                            cardPanel.BackgroundImage = Properties.Resources.D9;
+                            break;
+                    }
+                    break;
+                case 10:
+                    switch (card.getSuit())
+                    {
+                        case "S":
+                            cardPanel.BackgroundImage = Properties.Resources.S10;
+                            break;
+                        case "H":
+                            cardPanel.BackgroundImage = Properties.Resources.H10;
+                            break;
+                        case "C":
+                            cardPanel.BackgroundImage = Properties.Resources.C10;
+                            break;
+                        default:
+                            cardPanel.BackgroundImage = Properties.Resources.D10;
+                            break;
+                    }
+                    break;
+                case 11:
+                    switch (card.getSuit())
+                    {
+                        case "S":
+                            cardPanel.BackgroundImage = Properties.Resources.S11;
+                            break;
+                        case "H":
+                            cardPanel.BackgroundImage = Properties.Resources.H11;
+                            break;
+                        case "C":
+                            cardPanel.BackgroundImage = Properties.Resources.C11;
+                            break;
+                        default:
+                            cardPanel.BackgroundImage = Properties.Resources.D11;
+                            break;
+                    }
+                    break;
+                case 12:
+                    switch (card.getSuit())
+                    {
+                        case "S":
+                            cardPanel.BackgroundImage = Properties.Resources.S12;
+                            break;
+                        case "H":
+                            cardPanel.BackgroundImage = Properties.Resources.H12;
+                            break;
+                        case "C":
+                            cardPanel.BackgroundImage = Properties.Resources.C12;
+                            break;
+                        default:
+                            cardPanel.BackgroundImage = Properties.Resources.D12;
+                            break;
+                    }
+                    break;
+
+                case 13:
+                    switch (card.getSuit())
+                    {
+                        case "S":
+                            cardPanel.BackgroundImage = Properties.Resources.S13;
+                            break;
+                        case "H":
+                            cardPanel.BackgroundImage = Properties.Resources.H13;
+                            break;
+                        case "C":
+                            cardPanel.BackgroundImage = Properties.Resources.C13;
+                            break;
+                        default:
+                            cardPanel.BackgroundImage = Properties.Resources.D13;
+                            break;
+                    }
+                    break;
+                default:
+                    cardPanel.BackgroundImage = Properties.Resources.B;
+                    break;
             }
         }
 
@@ -168,5 +587,6 @@ namespace BlackJackGame
         {
 
         }
+
     }
 }

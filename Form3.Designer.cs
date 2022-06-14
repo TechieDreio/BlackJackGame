@@ -32,10 +32,15 @@ namespace BlackJackGame
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.panel2 = new System.Windows.Forms.Panel();
             this.tblTop = new System.Windows.Forms.Panel();
+            this.dCard5 = new System.Windows.Forms.Panel();
             this.pCard5 = new System.Windows.Forms.Panel();
+            this.dCard4 = new System.Windows.Forms.Panel();
             this.pCard4 = new System.Windows.Forms.Panel();
+            this.dCard3 = new System.Windows.Forms.Panel();
             this.pCard3 = new System.Windows.Forms.Panel();
+            this.dCard2 = new System.Windows.Forms.Panel();
             this.pCard2 = new System.Windows.Forms.Panel();
+            this.dCard1 = new System.Windows.Forms.Panel();
             this.pCard1 = new System.Windows.Forms.Panel();
             this.resultLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -55,11 +60,7 @@ namespace BlackJackGame
             this.button4 = new System.Windows.Forms.Button();
             this.coinsLabel = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dCard5 = new System.Windows.Forms.Panel();
-            this.dCard4 = new System.Windows.Forms.Panel();
-            this.dCard3 = new System.Windows.Forms.Panel();
-            this.dCard2 = new System.Windows.Forms.Panel();
-            this.dCard1 = new System.Windows.Forms.Panel();
+            this.newGameBtn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.tblTop.SuspendLayout();
             this.SuspendLayout();
@@ -98,6 +99,14 @@ namespace BlackJackGame
             this.tblTop.Size = new System.Drawing.Size(490, 420);
             this.tblTop.TabIndex = 0;
             // 
+            // dCard5
+            // 
+            this.dCard5.BackColor = System.Drawing.Color.Transparent;
+            this.dCard5.Location = new System.Drawing.Point(392, 51);
+            this.dCard5.Name = "dCard5";
+            this.dCard5.Size = new System.Drawing.Size(81, 117);
+            this.dCard5.TabIndex = 24;
+            // 
             // pCard5
             // 
             this.pCard5.BackColor = System.Drawing.Color.Transparent;
@@ -105,6 +114,14 @@ namespace BlackJackGame
             this.pCard5.Name = "pCard5";
             this.pCard5.Size = new System.Drawing.Size(81, 117);
             this.pCard5.TabIndex = 22;
+            // 
+            // dCard4
+            // 
+            this.dCard4.BackColor = System.Drawing.Color.Transparent;
+            this.dCard4.Location = new System.Drawing.Point(298, 51);
+            this.dCard4.Name = "dCard4";
+            this.dCard4.Size = new System.Drawing.Size(81, 117);
+            this.dCard4.TabIndex = 25;
             // 
             // pCard4
             // 
@@ -114,6 +131,14 @@ namespace BlackJackGame
             this.pCard4.Size = new System.Drawing.Size(81, 117);
             this.pCard4.TabIndex = 22;
             // 
+            // dCard3
+            // 
+            this.dCard3.BackColor = System.Drawing.Color.Transparent;
+            this.dCard3.Location = new System.Drawing.Point(204, 51);
+            this.dCard3.Name = "dCard3";
+            this.dCard3.Size = new System.Drawing.Size(81, 117);
+            this.dCard3.TabIndex = 26;
+            // 
             // pCard3
             // 
             this.pCard3.BackColor = System.Drawing.Color.Transparent;
@@ -122,6 +147,14 @@ namespace BlackJackGame
             this.pCard3.Size = new System.Drawing.Size(81, 117);
             this.pCard3.TabIndex = 22;
             // 
+            // dCard2
+            // 
+            this.dCard2.BackColor = System.Drawing.Color.Transparent;
+            this.dCard2.Location = new System.Drawing.Point(110, 51);
+            this.dCard2.Name = "dCard2";
+            this.dCard2.Size = new System.Drawing.Size(81, 117);
+            this.dCard2.TabIndex = 27;
+            // 
             // pCard2
             // 
             this.pCard2.BackColor = System.Drawing.Color.Transparent;
@@ -129,6 +162,14 @@ namespace BlackJackGame
             this.pCard2.Name = "pCard2";
             this.pCard2.Size = new System.Drawing.Size(81, 117);
             this.pCard2.TabIndex = 22;
+            // 
+            // dCard1
+            // 
+            this.dCard1.BackColor = System.Drawing.Color.Transparent;
+            this.dCard1.Location = new System.Drawing.Point(17, 51);
+            this.dCard1.Name = "dCard1";
+            this.dCard1.Size = new System.Drawing.Size(81, 117);
+            this.dCard1.TabIndex = 23;
             // 
             // pCard1
             // 
@@ -142,12 +183,12 @@ namespace BlackJackGame
             // 
             this.resultLabel.AutoSize = true;
             this.resultLabel.BackColor = System.Drawing.Color.Transparent;
-            this.resultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resultLabel.ForeColor = System.Drawing.Color.White;
-            this.resultLabel.Location = new System.Drawing.Point(153, 198);
+            this.resultLabel.Location = new System.Drawing.Point(143, 200);
             this.resultLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.resultLabel.Name = "resultLabel";
-            this.resultLabel.Size = new System.Drawing.Size(147, 24);
+            this.resultLabel.Size = new System.Drawing.Size(125, 20);
             this.resultLabel.TabIndex = 19;
             this.resultLabel.Text = "- - - - - - - - - - -";
             // 
@@ -216,7 +257,7 @@ namespace BlackJackGame
             // hitBtn
             // 
             this.hitBtn.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hitBtn.Location = new System.Drawing.Point(549, 508);
+            this.hitBtn.Location = new System.Drawing.Point(550, 471);
             this.hitBtn.Margin = new System.Windows.Forms.Padding(2);
             this.hitBtn.Name = "hitBtn";
             this.hitBtn.Size = new System.Drawing.Size(230, 41);
@@ -228,7 +269,7 @@ namespace BlackJackGame
             // evaluateBtn
             // 
             this.evaluateBtn.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.evaluateBtn.Location = new System.Drawing.Point(549, 553);
+            this.evaluateBtn.Location = new System.Drawing.Point(550, 516);
             this.evaluateBtn.Margin = new System.Windows.Forms.Padding(2);
             this.evaluateBtn.Name = "evaluateBtn";
             this.evaluateBtn.Size = new System.Drawing.Size(230, 41);
@@ -260,7 +301,7 @@ namespace BlackJackGame
             // dealBtn
             // 
             this.dealBtn.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dealBtn.Location = new System.Drawing.Point(550, 444);
+            this.dealBtn.Location = new System.Drawing.Point(550, 426);
             this.dealBtn.Margin = new System.Windows.Forms.Padding(2);
             this.dealBtn.Name = "dealBtn";
             this.dealBtn.Size = new System.Drawing.Size(230, 41);
@@ -272,7 +313,7 @@ namespace BlackJackGame
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(550, 404);
+            this.button1.Location = new System.Drawing.Point(550, 392);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(50, 30);
@@ -284,7 +325,7 @@ namespace BlackJackGame
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(610, 404);
+            this.button2.Location = new System.Drawing.Point(610, 392);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(50, 30);
@@ -296,7 +337,7 @@ namespace BlackJackGame
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(670, 404);
+            this.button3.Location = new System.Drawing.Point(670, 392);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(50, 30);
@@ -311,7 +352,7 @@ namespace BlackJackGame
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(647, 369);
+            this.label4.Location = new System.Drawing.Point(647, 361);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 24);
@@ -321,7 +362,7 @@ namespace BlackJackGame
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(730, 404);
+            this.button4.Location = new System.Drawing.Point(730, 392);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(50, 30);
@@ -354,45 +395,17 @@ namespace BlackJackGame
             this.label1.TabIndex = 20;
             this.label1.Text = "Coins:";
             // 
-            // dCard5
+            // newGameBtn
             // 
-            this.dCard5.BackColor = System.Drawing.Color.Transparent;
-            this.dCard5.Location = new System.Drawing.Point(392, 51);
-            this.dCard5.Name = "dCard5";
-            this.dCard5.Size = new System.Drawing.Size(81, 117);
-            this.dCard5.TabIndex = 24;
-            // 
-            // dCard4
-            // 
-            this.dCard4.BackColor = System.Drawing.Color.Transparent;
-            this.dCard4.Location = new System.Drawing.Point(298, 51);
-            this.dCard4.Name = "dCard4";
-            this.dCard4.Size = new System.Drawing.Size(81, 117);
-            this.dCard4.TabIndex = 25;
-            // 
-            // dCard3
-            // 
-            this.dCard3.BackColor = System.Drawing.Color.Transparent;
-            this.dCard3.Location = new System.Drawing.Point(204, 51);
-            this.dCard3.Name = "dCard3";
-            this.dCard3.Size = new System.Drawing.Size(81, 117);
-            this.dCard3.TabIndex = 26;
-            // 
-            // dCard2
-            // 
-            this.dCard2.BackColor = System.Drawing.Color.Transparent;
-            this.dCard2.Location = new System.Drawing.Point(110, 51);
-            this.dCard2.Name = "dCard2";
-            this.dCard2.Size = new System.Drawing.Size(81, 117);
-            this.dCard2.TabIndex = 27;
-            // 
-            // dCard1
-            // 
-            this.dCard1.BackColor = System.Drawing.Color.Transparent;
-            this.dCard1.Location = new System.Drawing.Point(17, 51);
-            this.dCard1.Name = "dCard1";
-            this.dCard1.Size = new System.Drawing.Size(81, 117);
-            this.dCard1.TabIndex = 23;
+            this.newGameBtn.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newGameBtn.Location = new System.Drawing.Point(549, 561);
+            this.newGameBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.newGameBtn.Name = "newGameBtn";
+            this.newGameBtn.Size = new System.Drawing.Size(230, 30);
+            this.newGameBtn.TabIndex = 23;
+            this.newGameBtn.Text = "New Game";
+            this.newGameBtn.UseVisualStyleBackColor = true;
+            this.newGameBtn.Click += new System.EventHandler(this.newGameBtn_Click);
             // 
             // Form3
             // 
@@ -400,6 +413,7 @@ namespace BlackJackGame
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BlackJackGame.Properties.Resources.greenBg;
             this.ClientSize = new System.Drawing.Size(796, 612);
+            this.Controls.Add(this.newGameBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.coinsLabel);
             this.Controls.Add(this.button4);
@@ -463,5 +477,6 @@ namespace BlackJackGame
         private System.Windows.Forms.Panel dCard3;
         private System.Windows.Forms.Panel dCard2;
         private System.Windows.Forms.Panel dCard1;
+        private System.Windows.Forms.Button newGameBtn;
     }
 }
