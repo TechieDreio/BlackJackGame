@@ -16,13 +16,32 @@ namespace BlackJackGame
     {
 
         Deck deck;
-        BlackJackHand handP;
-        BlackJackHand handB;
+        BlackJackHand playerHand;
+        BlackJackHand dealerHand;
 
         public Form3()
         {
             InitializeComponent();
-            
+            newGame();
+        }
+
+        private void newGame()
+        {
+            var systemPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            var complete = Path.Combine(systemPath, "BlackJack\\Players");
+            string currentPlayerPath = complete + "\\Current_Player.txt";
+            string playerName;
+            string playerCoins;
+
+            string[] readText = File.ReadAllLines(@"" + currentPlayerPath);
+            playerCoins = readText[0].Split(' ')[1];
+            playerName = readText[1].Split(' ')[1];
+
+            coinsLabel.Text = playerCoins;
+            playerLabel.Text = playerName;
+
+
+
         }
 
 
