@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BlackJackHand.cs" />
     <Compile Include="Card.cs" />
     <Compile Include="Deck.cs" />
     <Compile Include="Form1.cs">
@@ -68,6 +67,7 @@
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
     <Compile Include="Hand.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -131,6 +131,168 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="src\coinIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\B.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\C1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\C2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\C3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\C4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\C5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\C6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\C7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\C8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\C9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\C10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\C11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\C12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\C13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\D1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\D2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\D3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\D4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\D5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\D6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\D7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\D8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\D9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\D10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\D11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\D12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\D13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\H1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\H2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\H3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\H4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\H5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\H6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\H7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\H8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\H9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\H10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\H11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\H12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\H13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\J.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\S1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\S2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\S3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\S4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\S5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\S6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\S7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\S8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\S9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\S10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\S11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\S12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\card\S13.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
