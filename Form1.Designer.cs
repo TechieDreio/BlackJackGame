@@ -39,7 +39,6 @@ namespace BlackJackGame
             this.panel1 = new System.Windows.Forms.Panel();
             this.passwordTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.SettingsBTN = new System.Windows.Forms.Button();
             this.usernameTxt = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -80,7 +79,7 @@ namespace BlackJackGame
             // ExitBTN
             // 
             this.ExitBTN.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitBTN.Location = new System.Drawing.Point(90, 384);
+            this.ExitBTN.Location = new System.Drawing.Point(90, 341);
             this.ExitBTN.Name = "ExitBTN";
             this.ExitBTN.Size = new System.Drawing.Size(388, 37);
             this.ExitBTN.TabIndex = 5;
@@ -138,17 +137,6 @@ namespace BlackJackGame
             this.label3.TabIndex = 10;
             this.label3.Text = "Password";
             // 
-            // SettingsBTN
-            // 
-            this.SettingsBTN.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SettingsBTN.Location = new System.Drawing.Point(90, 341);
-            this.SettingsBTN.Name = "SettingsBTN";
-            this.SettingsBTN.Size = new System.Drawing.Size(388, 37);
-            this.SettingsBTN.TabIndex = 11;
-            this.SettingsBTN.Text = "Settings";
-            this.SettingsBTN.UseVisualStyleBackColor = true;
-            this.SettingsBTN.Click += new System.EventHandler(this.SettingsBTN_Click);
-            // 
             // usernameTxt
             // 
             this.usernameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -164,7 +152,6 @@ namespace BlackJackGame
             this.BackgroundImage = global::BlackJackGame.Properties.Resources.bg2;
             this.ClientSize = new System.Drawing.Size(564, 448);
             this.Controls.Add(this.usernameTxt);
-            this.Controls.Add(this.SettingsBTN);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.passwordTxt);
             this.Controls.Add(this.panel1);
@@ -195,7 +182,6 @@ namespace BlackJackGame
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox passwordTxt;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button SettingsBTN;
         private System.Windows.Forms.TextBox usernameTxt;
     }
 }

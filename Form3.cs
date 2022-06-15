@@ -614,6 +614,5 @@ namespace BlackJackGame
                 sw.Close();
             }
         }
-
     }
 }

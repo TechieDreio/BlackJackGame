@@ -373,6 +373,16 @@ namespace BlackJackGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap greenBg1 {
+            get {
+                object obj = ResourceManager.GetObject("greenBg1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap H1 {
             get {
                 object obj = ResourceManager.GetObject("H1", resourceCulture);
@@ -496,6 +506,16 @@ namespace BlackJackGame.Properties {
         internal static System.Drawing.Bitmap H9 {
             get {
                 object obj = ResourceManager.GetObject("H9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hallLogo {
+            get {
+                object obj = ResourceManager.GetObject("hallLogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

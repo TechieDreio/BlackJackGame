@@ -134,17 +134,16 @@ namespace BlackJackGame
 
         private void HallBTN_Click(object sender, EventArgs e)
         {
-
+            Form4 hall = new Form4();
+            this.Hide();
+            hall.ShowDialog();
+            this.Show();
         }
 
         private void ExitBTN_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
-        private void SettingsBTN_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -92,7 +92,7 @@ namespace BlackJackGame
                 {
                     using (StreamWriter sw = File.AppendText(complete + "\\PlayerList.txt"))
                     {
-                        sw.WriteLine("Name: " + username);
+                        sw.WriteLine("Name: " + username.Replace(' ','_'));
                         sw.WriteLine("Pass: " + password);
                         sw.Close();
                     }
@@ -111,7 +111,7 @@ namespace BlackJackGame
                     using (StreamWriter sw = File.AppendText(playerFilePath))
                     {
                         sw.WriteLine("Coins: " + "1000");
-                        sw.WriteLine("Name: " + username);
+                        sw.WriteLine("Name: " + username.Replace(' ', '_'));
                         sw.WriteLine("Pass: " + password);
                         sw.Close();
                     }
