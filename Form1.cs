@@ -105,13 +105,6 @@ namespace BlackJackGame
                             }
                         }
 
-                        /*
-                        MessageBox.Show("Login Successfully!", "Login",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                        // Show playing area 
-                        */
-
                         usernameTxt.Text = "";
                         passwordTxt.Text = "";
 

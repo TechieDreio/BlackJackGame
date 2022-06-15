@@ -138,18 +138,14 @@ namespace BlackJackGame
                                 resultLabel.Text = "Busted! You Lose.   P: " + pvalue + " - D:" + dvalue;
                                 player.deductCoins(bet);
                             }
-                            //=====================================================================================
-                            // update coin in file
-                            //=====================================================================================
+                            saveData();
                         }
                         else
                         {
                             gameInProgress = false;
                             resultLabel.Text = "Too bad! You Lose.   P: " + pvalue + " - D:" + dvalue;
-                            player.deductCoins(bet);
-                            //=====================================================================================
-                            // update coin in file
-                            //=====================================================================================
+                            player.deductCoins(bet); 
+                            saveData();
                         }
                     }
                     else
@@ -157,9 +153,7 @@ namespace BlackJackGame
                         gameInProgress = false;
                         resultLabel.Text = "Congratulation! You WIN!    P: " + pvalue + " - D:" + dvalue;
                         player.addCoins(bet);
-                        //=====================================================================================
-                        // update coin in file
-                        //=====================================================================================
+                        saveData();
                     }
                 }
                 else
@@ -230,6 +224,7 @@ namespace BlackJackGame
             }
 
         }
+
         private void newGameBtn_Click(object sender, EventArgs e)
         {
             if (!gameInProgress)
@@ -351,6 +346,25 @@ namespace BlackJackGame
             }
         }
 
+        // Update data to CurrentPlayer.txt file
+        private void saveData()
+        {
+            var systemPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            var complete = Path.Combine(systemPath, "BlackJack\\Players");
+            string currentPlayerPath = complete + "\\Current_Player.txt";
+            FileInfo file = new FileInfo(@"" + currentPlayerPath);
+            file.Create().Dispose();
+
+            using (StreamWriter sw = File.AppendText(currentPlayerPath))
+            {
+                sw.WriteLine("Coins: " + player.getCoins());
+                sw.WriteLine("Name: " + player.getUName());
+                sw.WriteLine("Pass: " + player.getPass());
+                sw.Close();
+            }
+        }
+
+        // Sets images to the panels
         private void setCardImg(Panel cardPanel, Card card)
         {
             switch (card.getValue())
@@ -583,9 +597,22 @@ namespace BlackJackGame
             }
         }
 
+        // Executes when form is closed
         private void Form3_FormClosed(object sender, FormClosedEventArgs e)
         {
+            var systemPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            var complete = Path.Combine(systemPath, "BlackJack\\Players");
+            string playerPath = complete + "\\Player_" + player.getUName().Replace(' ', '_') + "_xXx.txt";
+            FileInfo file = new FileInfo(@"" + playerPath);
+            file.Create().Dispose();
 
+            using (StreamWriter sw = File.AppendText(playerPath))
+            {
+                sw.WriteLine("Coins: " + player.getCoins());
+                sw.WriteLine("Name: " + player.getUName());
+                sw.WriteLine("Pass: " + player.getPass());
+                sw.Close();
+            }
         }
 
     }
