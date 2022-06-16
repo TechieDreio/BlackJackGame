@@ -215,16 +215,19 @@ namespace BlackJackGame
         {
             if (gameInProgress)
             {
-                if (!(bet == 0))
+                if (!dealInProgress)
                 {
-                    newGame();
-                }
-                else
-                {
-                    resultLabel.Text = "Place your bet...";
-                    MessageBox.Show("Please make a bet first.", "Deal",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Warning);
+                    if (!(bet == 0))
+                    {
+                        newGame();
+                    }
+                    else
+                    {
+                        resultLabel.Text = "Place your bet...";
+                        MessageBox.Show("Please make a bet first.", "Deal",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                    }
                 }
             }
             else
@@ -267,6 +270,7 @@ namespace BlackJackGame
 
             }
             gameInProgress = true;
+            dealInProgress = false;
         }
 
         // Bet 10
