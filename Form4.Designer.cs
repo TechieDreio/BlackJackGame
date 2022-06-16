@@ -30,47 +30,47 @@ namespace BlackJackGame
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.panelHeader = new System.Windows.Forms.Panel();
+            this.rank1 = new System.Windows.Forms.Label();
             this.userR1 = new System.Windows.Forms.Label();
             this.coinsR1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelRank = new System.Windows.Forms.Label();
+            this.labelUsername = new System.Windows.Forms.Label();
+            this.labelCoins = new System.Windows.Forms.Label();
             this.coinsR2 = new System.Windows.Forms.Label();
             this.userR2 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.rank2 = new System.Windows.Forms.Label();
             this.coinsR3 = new System.Windows.Forms.Label();
             this.userR3 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.rank3 = new System.Windows.Forms.Label();
             this.coinsR5 = new System.Windows.Forms.Label();
             this.userR5 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.rank5 = new System.Windows.Forms.Label();
             this.coinsR4 = new System.Windows.Forms.Label();
             this.userR4 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.rank4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelHeader
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = global::BlackJackGame.Properties.Resources.hallLogo;
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(500, 282);
-            this.panel1.TabIndex = 0;
+            this.panelHeader.BackColor = System.Drawing.Color.Transparent;
+            this.panelHeader.BackgroundImage = global::BlackJackGame.Properties.Resources.hallLogo;
+            this.panelHeader.Location = new System.Drawing.Point(12, 12);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(500, 282);
+            this.panelHeader.TabIndex = 0;
             // 
-            // label1
+            // rank1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(43, 354);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 29);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "1.";
+            this.rank1.AutoSize = true;
+            this.rank1.BackColor = System.Drawing.Color.Transparent;
+            this.rank1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rank1.ForeColor = System.Drawing.Color.White;
+            this.rank1.Location = new System.Drawing.Point(43, 354);
+            this.rank1.Name = "rank1";
+            this.rank1.Size = new System.Drawing.Size(34, 29);
+            this.rank1.TabIndex = 1;
+            this.rank1.Text = "1.";
             // 
             // userR1
             // 
@@ -96,41 +96,41 @@ namespace BlackJackGame
             this.coinsR1.TabIndex = 3;
             this.coinsR1.Text = "- - - - - - -";
             // 
-            // label4
+            // labelRank
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(28, 314);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 24);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Rank";
+            this.labelRank.AutoSize = true;
+            this.labelRank.BackColor = System.Drawing.Color.Transparent;
+            this.labelRank.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRank.ForeColor = System.Drawing.Color.White;
+            this.labelRank.Location = new System.Drawing.Point(28, 314);
+            this.labelRank.Name = "labelRank";
+            this.labelRank.Size = new System.Drawing.Size(57, 24);
+            this.labelRank.TabIndex = 4;
+            this.labelRank.Text = "Rank";
             // 
-            // label5
+            // labelUsername
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(167, 314);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 24);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Username";
+            this.labelUsername.AutoSize = true;
+            this.labelUsername.BackColor = System.Drawing.Color.Transparent;
+            this.labelUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUsername.ForeColor = System.Drawing.Color.White;
+            this.labelUsername.Location = new System.Drawing.Point(167, 314);
+            this.labelUsername.Name = "labelUsername";
+            this.labelUsername.Size = new System.Drawing.Size(105, 24);
+            this.labelUsername.TabIndex = 5;
+            this.labelUsername.Text = "Username";
             // 
-            // label6
+            // labelCoins
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(381, 314);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 24);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Coins";
+            this.labelCoins.AutoSize = true;
+            this.labelCoins.BackColor = System.Drawing.Color.Transparent;
+            this.labelCoins.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCoins.ForeColor = System.Drawing.Color.White;
+            this.labelCoins.Location = new System.Drawing.Point(381, 314);
+            this.labelCoins.Name = "labelCoins";
+            this.labelCoins.Size = new System.Drawing.Size(63, 24);
+            this.labelCoins.TabIndex = 6;
+            this.labelCoins.Text = "Coins";
             // 
             // coinsR2
             // 
@@ -156,17 +156,17 @@ namespace BlackJackGame
             this.userR2.TabIndex = 8;
             this.userR2.Text = "- - - - - - -";
             // 
-            // label9
+            // rank2
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(43, 406);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(34, 29);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "2.";
+            this.rank2.AutoSize = true;
+            this.rank2.BackColor = System.Drawing.Color.Transparent;
+            this.rank2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rank2.ForeColor = System.Drawing.Color.White;
+            this.rank2.Location = new System.Drawing.Point(43, 406);
+            this.rank2.Name = "rank2";
+            this.rank2.Size = new System.Drawing.Size(34, 29);
+            this.rank2.TabIndex = 7;
+            this.rank2.Text = "2.";
             // 
             // coinsR3
             // 
@@ -192,17 +192,17 @@ namespace BlackJackGame
             this.userR3.TabIndex = 11;
             this.userR3.Text = "- - - - - - -";
             // 
-            // label12
+            // rank3
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(43, 459);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(34, 29);
-            this.label12.TabIndex = 10;
-            this.label12.Text = "3.";
+            this.rank3.AutoSize = true;
+            this.rank3.BackColor = System.Drawing.Color.Transparent;
+            this.rank3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rank3.ForeColor = System.Drawing.Color.White;
+            this.rank3.Location = new System.Drawing.Point(43, 459);
+            this.rank3.Name = "rank3";
+            this.rank3.Size = new System.Drawing.Size(34, 29);
+            this.rank3.TabIndex = 10;
+            this.rank3.Text = "3.";
             // 
             // coinsR5
             // 
@@ -228,17 +228,17 @@ namespace BlackJackGame
             this.userR5.TabIndex = 17;
             this.userR5.Text = "- - - - - - -";
             // 
-            // label15
+            // rank5
             // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(43, 564);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(34, 29);
-            this.label15.TabIndex = 16;
-            this.label15.Text = "5.";
+            this.rank5.AutoSize = true;
+            this.rank5.BackColor = System.Drawing.Color.Transparent;
+            this.rank5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rank5.ForeColor = System.Drawing.Color.White;
+            this.rank5.Location = new System.Drawing.Point(43, 564);
+            this.rank5.Name = "rank5";
+            this.rank5.Size = new System.Drawing.Size(34, 29);
+            this.rank5.TabIndex = 16;
+            this.rank5.Text = "5.";
             // 
             // coinsR4
             // 
@@ -264,17 +264,17 @@ namespace BlackJackGame
             this.userR4.TabIndex = 14;
             this.userR4.Text = "- - - - - - -";
             // 
-            // label18
+            // rank4
             // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(43, 511);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(34, 29);
-            this.label18.TabIndex = 13;
-            this.label18.Text = "4.";
+            this.rank4.AutoSize = true;
+            this.rank4.BackColor = System.Drawing.Color.Transparent;
+            this.rank4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rank4.ForeColor = System.Drawing.Color.White;
+            this.rank4.Location = new System.Drawing.Point(43, 511);
+            this.rank4.Name = "rank4";
+            this.rank4.Size = new System.Drawing.Size(34, 29);
+            this.rank4.TabIndex = 13;
+            this.rank4.Text = "4.";
             // 
             // Form4
             // 
@@ -284,23 +284,23 @@ namespace BlackJackGame
             this.ClientSize = new System.Drawing.Size(524, 661);
             this.Controls.Add(this.coinsR5);
             this.Controls.Add(this.userR5);
-            this.Controls.Add(this.label15);
+            this.Controls.Add(this.rank5);
             this.Controls.Add(this.coinsR4);
             this.Controls.Add(this.userR4);
-            this.Controls.Add(this.label18);
+            this.Controls.Add(this.rank4);
             this.Controls.Add(this.coinsR3);
             this.Controls.Add(this.userR3);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.rank3);
             this.Controls.Add(this.coinsR2);
             this.Controls.Add(this.userR2);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.rank2);
+            this.Controls.Add(this.labelCoins);
+            this.Controls.Add(this.labelUsername);
+            this.Controls.Add(this.labelRank);
             this.Controls.Add(this.coinsR1);
             this.Controls.Add(this.userR1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.rank1);
+            this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -315,24 +315,24 @@ namespace BlackJackGame
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panelHeader;
+        private System.Windows.Forms.Label rank1;
         private System.Windows.Forms.Label userR1;
         private System.Windows.Forms.Label coinsR1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelRank;
+        private System.Windows.Forms.Label labelUsername;
+        private System.Windows.Forms.Label labelCoins;
         private System.Windows.Forms.Label coinsR2;
         private System.Windows.Forms.Label userR2;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label rank2;
         private System.Windows.Forms.Label coinsR3;
         private System.Windows.Forms.Label userR3;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label rank3;
         private System.Windows.Forms.Label coinsR5;
         private System.Windows.Forms.Label userR5;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label rank5;
         private System.Windows.Forms.Label coinsR4;
         private System.Windows.Forms.Label userR4;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label rank4;
     }
 }

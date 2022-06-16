@@ -30,7 +30,7 @@ namespace BlackJackGame
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelBG = new System.Windows.Forms.Panel();
             this.tblTop = new System.Windows.Forms.Panel();
             this.dCard5 = new System.Windows.Forms.Panel();
             this.pCard5 = new System.Windows.Forms.Panel();
@@ -43,37 +43,37 @@ namespace BlackJackGame
             this.dCard1 = new System.Windows.Forms.Panel();
             this.pCard1 = new System.Windows.Forms.Panel();
             this.resultLabel = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.betLbl = new System.Windows.Forms.Label();
             this.betLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.dealerName = new System.Windows.Forms.Label();
             this.playerLabel = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelHeaderLogo = new System.Windows.Forms.Panel();
             this.hitBtn = new System.Windows.Forms.Button();
             this.evaluateBtn = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panelRightLogo = new System.Windows.Forms.Panel();
+            this.panelCoinLogo = new System.Windows.Forms.Panel();
             this.dealBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.betBtnLabel = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.coinsLabel = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.coinLbl = new System.Windows.Forms.Label();
             this.newGameBtn = new System.Windows.Forms.Button();
-            this.panel2.SuspendLayout();
+            this.panelBG.SuspendLayout();
             this.tblTop.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel2
+            // panelBG
             // 
-            this.panel2.BackColor = System.Drawing.Color.Navy;
-            this.panel2.Controls.Add(this.tblTop);
-            this.panel2.Location = new System.Drawing.Point(16, 143);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(520, 452);
-            this.panel2.TabIndex = 10;
+            this.panelBG.BackColor = System.Drawing.Color.Navy;
+            this.panelBG.Controls.Add(this.tblTop);
+            this.panelBG.Location = new System.Drawing.Point(16, 143);
+            this.panelBG.Margin = new System.Windows.Forms.Padding(2);
+            this.panelBG.Name = "panelBG";
+            this.panelBG.Size = new System.Drawing.Size(520, 452);
+            this.panelBG.TabIndex = 10;
             // 
             // tblTop
             // 
@@ -89,9 +89,9 @@ namespace BlackJackGame
             this.tblTop.Controls.Add(this.dCard1);
             this.tblTop.Controls.Add(this.pCard1);
             this.tblTop.Controls.Add(this.resultLabel);
-            this.tblTop.Controls.Add(this.label6);
+            this.tblTop.Controls.Add(this.betLbl);
             this.tblTop.Controls.Add(this.betLabel);
-            this.tblTop.Controls.Add(this.label2);
+            this.tblTop.Controls.Add(this.dealerName);
             this.tblTop.Controls.Add(this.playerLabel);
             this.tblTop.Location = new System.Drawing.Point(15, 16);
             this.tblTop.Margin = new System.Windows.Forms.Padding(2);
@@ -192,18 +192,18 @@ namespace BlackJackGame
             this.resultLabel.TabIndex = 19;
             this.resultLabel.Text = "- - - - - - - - - - -";
             // 
-            // label6
+            // betLbl
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(6, 198);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 24);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Bet:";
+            this.betLbl.AutoSize = true;
+            this.betLbl.BackColor = System.Drawing.Color.Transparent;
+            this.betLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.betLbl.ForeColor = System.Drawing.Color.White;
+            this.betLbl.Location = new System.Drawing.Point(6, 198);
+            this.betLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.betLbl.Name = "betLbl";
+            this.betLbl.Size = new System.Drawing.Size(46, 24);
+            this.betLbl.TabIndex = 18;
+            this.betLbl.Text = "Bet:";
             // 
             // betLabel
             // 
@@ -218,18 +218,18 @@ namespace BlackJackGame
             this.betLabel.TabIndex = 17;
             this.betLabel.Text = "00000";
             // 
-            // label2
+            // dealerName
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(2, 2);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 29);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Dealer";
+            this.dealerName.AutoSize = true;
+            this.dealerName.BackColor = System.Drawing.Color.Transparent;
+            this.dealerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dealerName.ForeColor = System.Drawing.Color.White;
+            this.dealerName.Location = new System.Drawing.Point(2, 2);
+            this.dealerName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.dealerName.Name = "dealerName";
+            this.dealerName.Size = new System.Drawing.Size(91, 29);
+            this.dealerName.TabIndex = 16;
+            this.dealerName.Text = "Dealer";
             // 
             // playerLabel
             // 
@@ -244,15 +244,15 @@ namespace BlackJackGame
             this.playerLabel.TabIndex = 15;
             this.playerLabel.Text = "Player";
             // 
-            // panel1
+            // panelHeaderLogo
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = global::BlackJackGame.Properties.Resources.name1;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel1.Location = new System.Drawing.Point(16, 5);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(520, 149);
-            this.panel1.TabIndex = 9;
+            this.panelHeaderLogo.BackColor = System.Drawing.Color.Transparent;
+            this.panelHeaderLogo.BackgroundImage = global::BlackJackGame.Properties.Resources.name1;
+            this.panelHeaderLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panelHeaderLogo.Location = new System.Drawing.Point(16, 5);
+            this.panelHeaderLogo.Name = "panelHeaderLogo";
+            this.panelHeaderLogo.Size = new System.Drawing.Size(520, 149);
+            this.panelHeaderLogo.TabIndex = 9;
             // 
             // hitBtn
             // 
@@ -278,25 +278,25 @@ namespace BlackJackGame
             this.evaluateBtn.UseVisualStyleBackColor = true;
             this.evaluateBtn.Click += new System.EventHandler(this.evaluateBtn_Click);
             // 
-            // panel4
+            // panelRightLogo
             // 
-            this.panel4.BackColor = System.Drawing.Color.Transparent;
-            this.panel4.BackgroundImage = global::BlackJackGame.Properties.Resources.logo21;
-            this.panel4.Location = new System.Drawing.Point(567, 11);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(195, 214);
-            this.panel4.TabIndex = 14;
+            this.panelRightLogo.BackColor = System.Drawing.Color.Transparent;
+            this.panelRightLogo.BackgroundImage = global::BlackJackGame.Properties.Resources.logo21;
+            this.panelRightLogo.Location = new System.Drawing.Point(567, 11);
+            this.panelRightLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.panelRightLogo.Name = "panelRightLogo";
+            this.panelRightLogo.Size = new System.Drawing.Size(195, 214);
+            this.panelRightLogo.TabIndex = 14;
             // 
-            // panel5
+            // panelCoinLogo
             // 
-            this.panel5.BackColor = System.Drawing.Color.Transparent;
-            this.panel5.BackgroundImage = global::BlackJackGame.Properties.Resources.coinIcon;
-            this.panel5.Location = new System.Drawing.Point(620, 226);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(90, 80);
-            this.panel5.TabIndex = 15;
+            this.panelCoinLogo.BackColor = System.Drawing.Color.Transparent;
+            this.panelCoinLogo.BackgroundImage = global::BlackJackGame.Properties.Resources.coinIcon;
+            this.panelCoinLogo.Location = new System.Drawing.Point(620, 226);
+            this.panelCoinLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.panelCoinLogo.Name = "panelCoinLogo";
+            this.panelCoinLogo.Size = new System.Drawing.Size(90, 80);
+            this.panelCoinLogo.TabIndex = 15;
             // 
             // dealBtn
             // 
@@ -346,18 +346,18 @@ namespace BlackJackGame
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // label4
+            // betBtnLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(647, 349);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 24);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Bet";
+            this.betBtnLabel.AutoSize = true;
+            this.betBtnLabel.BackColor = System.Drawing.Color.Transparent;
+            this.betBtnLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.betBtnLabel.ForeColor = System.Drawing.Color.White;
+            this.betBtnLabel.Location = new System.Drawing.Point(647, 349);
+            this.betBtnLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.betBtnLabel.Name = "betBtnLabel";
+            this.betBtnLabel.Size = new System.Drawing.Size(40, 24);
+            this.betBtnLabel.TabIndex = 17;
+            this.betBtnLabel.Text = "Bet";
             // 
             // button4
             // 
@@ -382,18 +382,18 @@ namespace BlackJackGame
             this.coinsLabel.Text = "00000000";
             this.coinsLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label1
+            // coinLbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(545, 316);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 24);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Coins:";
+            this.coinLbl.AutoSize = true;
+            this.coinLbl.BackColor = System.Drawing.Color.Transparent;
+            this.coinLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.coinLbl.ForeColor = System.Drawing.Color.White;
+            this.coinLbl.Location = new System.Drawing.Point(545, 316);
+            this.coinLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.coinLbl.Name = "coinLbl";
+            this.coinLbl.Size = new System.Drawing.Size(69, 24);
+            this.coinLbl.TabIndex = 20;
+            this.coinLbl.Text = "Coins:";
             // 
             // newGameBtn
             // 
@@ -414,18 +414,18 @@ namespace BlackJackGame
             this.BackgroundImage = global::BlackJackGame.Properties.Resources.greenBg;
             this.ClientSize = new System.Drawing.Size(796, 612);
             this.Controls.Add(this.newGameBtn);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.coinLbl);
             this.Controls.Add(this.coinsLabel);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.panelCoinLogo);
+            this.Controls.Add(this.panelRightLogo);
+            this.Controls.Add(this.betBtnLabel);
             this.Controls.Add(this.evaluateBtn);
             this.Controls.Add(this.hitBtn);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelBG);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelHeaderLogo);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dealBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -437,7 +437,7 @@ namespace BlackJackGame
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BlackJack";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form3_FormClosed);
-            this.panel2.ResumeLayout(false);
+            this.panelBG.ResumeLayout(false);
             this.tblTop.ResumeLayout(false);
             this.tblTop.PerformLayout();
             this.ResumeLayout(false);
@@ -447,26 +447,26 @@ namespace BlackJackGame
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelHeaderLogo;
+        private System.Windows.Forms.Panel panelBG;
         private System.Windows.Forms.Panel tblTop;
         private System.Windows.Forms.Button hitBtn;
         private System.Windows.Forms.Button evaluateBtn;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panelRightLogo;
         private System.Windows.Forms.Label playerLabel;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label dealerName;
+        private System.Windows.Forms.Panel panelCoinLogo;
         private System.Windows.Forms.Label resultLabel;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label betLbl;
         private System.Windows.Forms.Label betLabel;
         private System.Windows.Forms.Button dealBtn;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label betBtnLabel;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox coinsLabel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label coinLbl;
         private System.Windows.Forms.Panel pCard5;
         private System.Windows.Forms.Panel pCard4;
         private System.Windows.Forms.Panel pCard3;

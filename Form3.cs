@@ -17,6 +17,7 @@ namespace BlackJackGame
         Hand playerHand;
         Hand dealerHand;
         bool gameInProgress = false;
+        bool dealInProgress = false;
 
         Player player;
         
@@ -44,11 +45,12 @@ namespace BlackJackGame
             deck = new Deck();
             deck.shuffle();
             bet = 0;
+            gameInProgress = true;
         }
 
         private void hitBtn_Click(object sender, EventArgs e)
         {
-            if (gameInProgress)
+            if (gameInProgress && dealInProgress)
             {
                 if (playerHand.getHandCardCount() >= 2)
                 {
@@ -92,10 +94,10 @@ namespace BlackJackGame
 
         private void evaluate()
         {
-            if (gameInProgress)
+            if (gameInProgress && dealInProgress)
             {
                 int dvalue = dealerHand.getHandTotal();
-                while ((dvalue < 15) && (dealerHand.getHandCardCount() < 5))
+                while ((dvalue < 17) && (dealerHand.getHandCardCount() < 5))
                 {
                     Card dealed = deck.dealCard();
                     dealerHand.addCard(dealed);
@@ -150,9 +152,17 @@ namespace BlackJackGame
                     }
                     else
                     {
-                        gameInProgress = false;
-                        resultLabel.Text = "Congratulation! You WIN!    P: " + pvalue + " - D:" + dvalue;
-                        player.addCoins(bet);
+                        if (pvalue < 22)
+                        {
+                            gameInProgress = false;
+                            resultLabel.Text = "Congratulation! You WIN!    P: " + pvalue + " - D:" + dvalue;
+                            player.addCoins(bet);
+                        }
+                        else
+                        {
+                            gameInProgress = false;
+                            resultLabel.Text = "Both Busted! It's a Tie.   P: " + pvalue + " - D:" + dvalue;
+                        }
                         saveData();
                     }
                 }
@@ -161,9 +171,10 @@ namespace BlackJackGame
                     gameInProgress = false;
                     resultLabel.Text = "It's a Draw!    P: " + pvalue + " - D:" + dvalue;
                 }
+                bet = 0;
+                gameInProgress = false;
+                dealInProgress = false;
             }
-            bet = 0;
-            gameInProgress = false;
         }
 
         private void newGame()
@@ -202,7 +213,7 @@ namespace BlackJackGame
 
         private void dealBtn_Click(object sender, EventArgs e)
         {
-            if (!gameInProgress)
+            if (gameInProgress)
             {
                 if (!(bet == 0))
                 {
@@ -218,17 +229,27 @@ namespace BlackJackGame
             }
             else
             {
-                MessageBox.Show("Game in progress!", "Deal",
+                MessageBox.Show("Please initiate a new game first.\nPlease click the [ New Game ] button.", "Deal",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
             }
-
+            dealInProgress = true;
         }
 
         private void newGameBtn_Click(object sender, EventArgs e)
         {
             if (!gameInProgress)
             {
+
+                if (player.getCoins() <= 100)
+                {
+                    MessageBox.Show("Unfortunately you ran out of coins!\n\n" +
+                        "You will now received an additional 1000 coins.", "New Game",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                    player.addCoins(1000);
+                }
+
                 coinsLabel.Text = player.getCoins().ToString();
                 playerLabel.Text = player.getUName();
                 pCard1.BackgroundImage = null;
@@ -243,29 +264,40 @@ namespace BlackJackGame
                 dCard5.BackgroundImage = null;
                 betLabel.Text = "00000";
                 resultLabel.Text = "Place your bet...";
+
             }
+            gameInProgress = true;
         }
 
         // Bet 10
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!gameInProgress)
+            if (gameInProgress)
             {
-                if (bet + 10 <= 1000 && bet + 10 <= player.getCoins())
+                if(bet + 10 <= player.getCoins())
                 {
-                    bet += 10;
-                    betLabel.Text = bet.ToString();
+                    if (bet + 10 <= 1000)
+                    {
+                        bet += 10;
+                        betLabel.Text = bet.ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Unable to add bet.\n\nBet limit is up to 1000 coins only.", "Bet",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Unable to add bet.\n\nBet limit is up to 1000 coins only.", "Bet",
+                    MessageBox.Show("Unable to add bet.\n\nBet exceeds remaining coins.", "Bet",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Game in progress!\n\nFinish the game to make another bet.", "Bet",
+                MessageBox.Show("Please initiate a new game first.\nPlease click the [ New Game ] button.", "Deal",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
             }
@@ -274,23 +306,33 @@ namespace BlackJackGame
         // Bet 50
         private void button2_Click(object sender, EventArgs e)
         {
-            if (!gameInProgress)
+            if (gameInProgress)
             {
-                if (bet + 50 <= 1000 && bet + 50 <= player.getCoins())
+
+                if (bet + 50 <= player.getCoins())
                 {
-                    bet += 50;
-                    betLabel.Text = bet.ToString();
+                    if (bet + 50 <= 1000)
+                    {
+                        bet += 50;
+                        betLabel.Text = bet.ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Unable to add bet.\n\nBet limit is up to 1000 coins only.", "Bet",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Unable to add bet.\n\nBet limit is up to 1000 coins only.", "Bet",
+                    MessageBox.Show("Unable to add bet.\n\nBet exceeds remaining coins.", "Bet",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Game in progress!\n\nFinish the game to make another bet.", "Bet",
+                MessageBox.Show("Please initiate a new game first.\nPlease click the [ New Game ] button.", "Deal",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
             }
@@ -299,23 +341,33 @@ namespace BlackJackGame
         // Bet 100
         private void button3_Click(object sender, EventArgs e)
         {
-            if (!gameInProgress)
+            if (gameInProgress)
             {
-                if (bet + 100 <= 1000 && bet + 100 <= player.getCoins())
+
+                if (bet + 100 <= player.getCoins())
                 {
-                    bet += 100;
-                    betLabel.Text = bet.ToString();
+                    if (bet + 100 <= 1000)
+                    {
+                        bet += 100;
+                        betLabel.Text = bet.ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Unable to add bet.\n\nBet limit is up to 1000 coins only.", "Bet",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Unable to add bet.\n\nBet limit is up to 1000 coins only.", "Bet",
+                    MessageBox.Show("Unable to add bet.\n\nBet exceeds remaining coins.", "Bet",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Game in progress!\n\nFinish the game to make another bet.", "Bet",
+                MessageBox.Show("Please initiate a new game first.\nPlease click the [ New Game ] button.", "Deal",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
             }
@@ -324,23 +376,33 @@ namespace BlackJackGame
         // Bet 500
         private void button4_Click(object sender, EventArgs e)
         {
-            if (!gameInProgress)
+            if (gameInProgress)
             {
-                if (bet + 500 <= 1000 && bet + 500 <= player.getCoins())
+
+                if (bet + 500 <= player.getCoins())
                 {
-                    bet += 500;
-                    betLabel.Text = bet.ToString();
+                    if (bet + 500 <= 1000)
+                    {
+                        bet += 500;
+                        betLabel.Text = bet.ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Unable to add bet.\n\nBet limit is up to 1000 coins only.", "Bet",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Unable to add bet.\n\nBet limit is up to 1000 coins only.", "Bet",
+                    MessageBox.Show("Unable to add bet.\n\nBet exceeds remaining coins.", "Bet",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Game in progress!\n\nFinish the game to make another bet.", "Bet",
+                MessageBox.Show("Please initiate a new game first.\nPlease click the [ New Game ] button.", "Deal",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
             }

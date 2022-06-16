@@ -50,12 +50,6 @@ namespace BlackJackGame
 
                 Console.WriteLine(complete);
 
-                /*using (FileStream fs = File.Create(complete + "\\PlayerList.txt"))
-                {
-                    byte[] info = new UTF8Encoding(true).GetBytes("This is some text in the file.");
-                    // Add some information to the file.
-                    fs.Write(info, 0, info.Length);
-                }*/
                 
                 FileInfo playerListFile = new FileInfo(@"" + complete + "\\PlayerList.txt");
 
@@ -65,14 +59,9 @@ namespace BlackJackGame
                     Console.WriteLine("File \"PlayerList.txt\" created successfully!");
                 }
 
-
-                // Create an instance of StreamReader to read from a file.
-                // The using statement also closes the StreamReader.
                 using (StreamReader sr = new StreamReader(complete + "\\PlayerList.txt"))
                 {
                     string line;
-                    // Read and display lines from the file until the end of
-                    // the file is reached.
                     while ((line = sr.ReadLine()) != null)
                     {
                         if(line == "Name: " + username)

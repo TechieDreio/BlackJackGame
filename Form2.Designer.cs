@@ -31,8 +31,8 @@ namespace BlackJackGame
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.usernameTxt = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelUname = new System.Windows.Forms.Label();
+            this.labelPass = new System.Windows.Forms.Label();
             this.passwordTxt = new System.Windows.Forms.TextBox();
             this.RegisterBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -46,29 +46,29 @@ namespace BlackJackGame
             this.usernameTxt.Size = new System.Drawing.Size(274, 29);
             this.usernameTxt.TabIndex = 0;
             // 
-            // label1
+            // labelUname
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(45, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 24);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Username";
+            this.labelUname.AutoSize = true;
+            this.labelUname.BackColor = System.Drawing.Color.Transparent;
+            this.labelUname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUname.ForeColor = System.Drawing.Color.White;
+            this.labelUname.Location = new System.Drawing.Point(45, 27);
+            this.labelUname.Name = "labelUname";
+            this.labelUname.Size = new System.Drawing.Size(105, 24);
+            this.labelUname.TabIndex = 1;
+            this.labelUname.Text = "Username";
             // 
-            // label2
+            // labelPass
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(45, 65);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 24);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Password";
+            this.labelPass.AutoSize = true;
+            this.labelPass.BackColor = System.Drawing.Color.Transparent;
+            this.labelPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPass.ForeColor = System.Drawing.Color.Transparent;
+            this.labelPass.Location = new System.Drawing.Point(45, 65);
+            this.labelPass.Name = "labelPass";
+            this.labelPass.Size = new System.Drawing.Size(100, 24);
+            this.labelPass.TabIndex = 3;
+            this.labelPass.Text = "Password";
             // 
             // passwordTxt
             // 
@@ -99,9 +99,9 @@ namespace BlackJackGame
             this.BackgroundImage = global::BlackJackGame.Properties.Resources.addNewBG2;
             this.ClientSize = new System.Drawing.Size(470, 186);
             this.Controls.Add(this.RegisterBtn);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelPass);
             this.Controls.Add(this.passwordTxt);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelUname);
             this.Controls.Add(this.usernameTxt);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -118,8 +118,8 @@ namespace BlackJackGame
         #endregion
 
         private System.Windows.Forms.TextBox usernameTxt;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelUname;
+        private System.Windows.Forms.Label labelPass;
         private System.Windows.Forms.TextBox passwordTxt;
         private System.Windows.Forms.Button RegisterBtn;
     }
